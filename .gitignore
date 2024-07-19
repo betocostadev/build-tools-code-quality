@@ -130,3 +130,5 @@ dist
 .pnp.*
 
 .DS_Store
+# .DS_Store files in any subfolder
+**/.DS_Store
