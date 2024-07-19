@@ -1,0 +1,7 @@
+button {
+	background-color: rebeccapurple;
+	color: white;
+	&:hover {
+		background-color: blanchedalmond;
+	}
+}

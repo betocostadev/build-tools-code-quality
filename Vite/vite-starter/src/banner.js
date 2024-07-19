@@ -1,3 +1,7 @@
+import { bannerText } from './banner.module.css'
+
 export const addBanner = (text) => {
-  document.querySelector('#content').textContent = text
+  const container = document.querySelector('#content')
+  container.classList.add(bannerText)
+  container.textContent = text
 }

@@ -1,9 +1,13 @@
-import { addBanner } from './banner'
+import styles from './counter.module.css'
+
+import './postcss.css'
 
 export const initializeCounter = (doc = globalThis.document) => {
   const countElement = doc.getElementById('count')
   const incrementButton = doc.getElementById('increment')
   const decrementButton = doc.getElementById('decrement')
+
+  countElement.classList.add(styles.count)
 
   let count = 0
 
@@ -14,9 +18,9 @@ export const initializeCounter = (doc = globalThis.document) => {
     // By default the import is a promise
     // If you check the dev tools you'll see it being loaded after the condition is met
     if (count < 0) {
-      //   import('./banner').then(({ addBanner }) => {
-      addBanner("You're below zero!")
-      //   })
+      import('./banner').then(({ addBanner }) => {
+        addBanner("You're below zero!")
+      })
     }
   }
 
