@@ -5,7 +5,8 @@ import image from './steve-after-a-workshop.jpg?h=600&format=webp'
 const img = document.createElement('img')
 img.src = image
 
-document.querySelector('#content').appendChild(img)
+const content = document.querySelector('#content')
+content.appendChild(img)
 
 console.log(import.meta)
 console.log('Getting the env')
@@ -27,3 +28,16 @@ document.querySelector('h2').textContent = 'Hello from index.js'
 import { name } from './characters/gandorf.json'
 
 console.log(`Gandorfs name from the json is: ${name}`)
+
+// Import glob
+for (const [path, module] of Object.entries(
+  import.meta.glob('./logos/**/*.svg'),
+)) {
+  // console.log({ path, module })
+  module().then((url) => {
+    const img = document.createElement('img')
+    img.src = url.default
+    img.height = 150
+    content.appendChild(img)
+  })
+}
