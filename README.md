@@ -24,3 +24,25 @@ Each course is in each corresponding folder
   - Integration Tests
 - Enterprise UI Development: Testing & Code Quality
 - Testing Web Apps with Cypress
+
+## Running the applications
+
+### Vite
+
+**Vite/vite-started**
+
+Basic Vite Project with some created plugins.
+
+Run it with `npm run dev`
+
+Many other scripts available in _package.json_.
+
+### Javascript Testing Practices and Principes
+
+**JSTesting/testing-workshop**
+
+This application wasn't running on Node 20+, changing to Node 18.17.0 fixed the issue.
+
+Run it with `npm run dev`.
+
+Many other scripts available in _package.json_.

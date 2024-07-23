@@ -141,7 +141,10 @@ test('snapshot examples', () => {
     someFunction: () => {},
     symbol: Symbol('symbol description'),
     set: new Set([1, 2, 3]),
-    map: new Map([[{}, []], [[], {}]]),
+    map: new Map([
+      [{}, []],
+      [[], {}],
+    ]),
     // and more!
   }
   expect(object).toMatchSnapshot()
