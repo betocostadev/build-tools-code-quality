@@ -16,8 +16,11 @@ Each course is in each corresponding folder
   - Assets & Imports
   - Building Libraries
   - Plugins
-  - Wrapping Up
 - JavaScript Testing Practices and Principles
-
+  - Intro to Testing
+  - Unit Tests
+  - Mocks
+  - Testing Practices
+  - Integration Tests
 - Enterprise UI Development: Testing & Code Quality
 - Testing Web Apps with Cypress
