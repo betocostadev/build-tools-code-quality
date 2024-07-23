@@ -41,3 +41,11 @@ for (const [path, module] of Object.entries(
     content.appendChild(img)
   })
 }
+
+// Using the markdown plugin created
+import paul from './biographies/paul.md'
+
+console.log({ paul })
+const markdownContainer = document.createElement('div')
+markdownContainer.innerHTML = paul
+content.appendChild(markdownContainer)

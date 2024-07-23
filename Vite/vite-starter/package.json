@@ -30,5 +30,8 @@
     "vite": "4.5.0",
     "vite-imagetools": "^7.0.4",
     "vitest": "^0.34.6"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0"
   }
 }
