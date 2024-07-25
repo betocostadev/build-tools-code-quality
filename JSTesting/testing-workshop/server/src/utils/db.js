@@ -31,7 +31,7 @@ async function getUsers(filter) {
 }
 
 async function getUser(id) {
-  return (await getUsers(u => u.id === id))[0]
+  return (await getUsers((u) => u.id === id))[0]
 }
 
 async function updateUser(id, newInfo) {
@@ -45,7 +45,7 @@ async function updateUser(id, newInfo) {
 
 async function deleteUser(id) {
   const user = await getUser(id)
-  db.users = db.users.filter(u => u.id !== id)
+  db.users = db.users.filter((u) => u.id !== id)
   return user
 }
 
@@ -63,7 +63,7 @@ async function getPosts(filter) {
 }
 
 async function getPost(id) {
-  return (await getPosts(t => t.id === id))[0]
+  return (await getPosts((t) => t.id === id))[0]
 }
 
 async function updatePost(id, newInfo) {
@@ -77,7 +77,7 @@ async function updatePost(id, newInfo) {
 
 async function deletePost(id) {
   const post = await getPost(id)
-  db.posts = db.posts.filter(t => t.id !== id)
+  db.posts = db.posts.filter((t) => t.id !== id)
   return post
 }
 

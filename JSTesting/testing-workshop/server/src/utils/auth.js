@@ -23,7 +23,7 @@ function getLocalStrategy() {
   return new LocalStrategy(async (username, password, done) => {
     let user
     try {
-      user = (await db.getUsers(u => u.username === username))[0]
+      user = (await db.getUsers((u) => u.username === username))[0]
     } catch (error) {
       return done(error)
     }
