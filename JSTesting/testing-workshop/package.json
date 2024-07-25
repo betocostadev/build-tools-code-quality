@@ -17,6 +17,7 @@
     "build": "concurrently --names \"server,client\" --prefix \"[{name}]\" --prefix-colors \"bgCyan.reset.bold,bgGreen.reset.bold\" \"npm run build:server --silent\" \"npm run build:client --silent\"",
     "build:client": "cd client && npm run build --silent",
     "build:server": "cd server && npm run build --silent",
+    "test:coverage": "open coverage/lcov-report/index.html",
     "test": "jest --watch",
     "test:client": "jest --config ./client/jest.config.js --watch",
     "test:server": "jest --config ./server/jest.config.js --watch",
