@@ -1,3 +1,4 @@
+/* eslint-disable no-import-assign */
 // improved assertions for mocks
 import thumbWar from '../thumb-war'
 import * as utils from '../utils'

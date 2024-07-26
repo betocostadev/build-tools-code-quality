@@ -1,3 +1,4 @@
+/* eslint-disable no-import-assign */
 // monkey-patching
 import thumbWar from '../thumb-war'
 import * as utils from '../utils'
@@ -9,7 +10,7 @@ test('returns winner', () => {
   // our own that always returns the second player (see hint #3)
 
   const originalGetWinner = utils.getWinner
-  utils.getWinner = (p1, p2) => p2
+  utils.getWinner = (_p1, p2) => p2
 
   const winner = thumbWar('Ken Wheeler', 'Kent C. Dodds')
   // change this assertion to be more for a specific player

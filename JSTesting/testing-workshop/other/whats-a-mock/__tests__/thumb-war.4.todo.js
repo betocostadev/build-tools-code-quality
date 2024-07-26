@@ -11,20 +11,32 @@ import * as utils from '../utils'
 //
 // (Hint #1)
 
+jest.mock('../utils', () => {
+  return {
+    getWinner: jest.fn((_p1, p2) => p2),
+  }
+})
+
+// For more tests, would be nice to clear the Mock before every test
+
+beforeEach(() => {
+  utils.getWinner.mockClear()
+})
+
 test('returns winner', () => {
   // remove the next two lines
-  jest.spyOn(utils, 'getWinner')
-  utils.getWinner.mockImplementation((p1, p2) => p2)
+  // jest.spyOn(utils, 'getWinner')
+  // utils.getWinner.mockImplementation((p1, p2) => p2)
 
   const winner = thumbWar('Ken Wheeler', 'Kent C. Dodds')
   expect(winner).toBe('Kent C. Dodds')
   expect(utils.getWinner).toHaveBeenCalledTimes(2)
-  utils.getWinner.mock.calls.forEach(args => {
+  utils.getWinner.mock.calls.forEach((args) => {
     expect(args).toEqual(['Ken Wheeler', 'Kent C. Dodds'])
   })
 
   // remove the next line
-  utils.getWinner.mockRestore()
+  // utils.getWinner.mockRestore()
 })
 
 /*
