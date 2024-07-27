@@ -6,7 +6,7 @@ import startServer from '../../start'
 
 jest.unmock('axios')
 
-const getUser = res => res.data.user
+const getUser = (res) => res.data.user
 
 let baseURL, api, server
 
@@ -39,7 +39,7 @@ test('user CRUD', async () => {
   authAPI.defaults.headers.common.authorization = `Bearer ${testUser.token}`
 
   // read (authenticated)
-  const readUserAuthenticated = await api
+  const readUserAuthenticated = await authAPI
     .get(`users/${testUser.id}`)
     .then(getUser)
   expect(readUserAuthenticated).toEqual(testUser)
@@ -60,12 +60,12 @@ test('user CRUD', async () => {
   // read of deleted user
   const error = await api
     .get(`users/${updatedTestUser.id}`)
-    .catch(e => e.response)
+    .catch((e) => e.response)
   expect(error.status).toBe(404)
 })
 
 test('get users', async () => {
-  const {users} = await api.get('users').then(res => res.data)
+  const {users} = await api.get('users').then((res) => res.data)
   const actualUsers = await db.getUsers()
-  expect(users).toEqual(actualUsers.map(u => omit(u, ['hash', 'salt'])))
+  expect(users).toEqual(actualUsers.map((u) => omit(u, ['hash', 'salt'])))
 })

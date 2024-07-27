@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 import express from 'express'
 import setupUserRoutes from './users'
 import setupAuthRoutes from './auth'
